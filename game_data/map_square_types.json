@@ -1,0 +1,66 @@
+{
+	"#": {
+		"name": "Wall",
+		"description": "A wall that cannot be passed."
+	},
+	"P": {
+		"name": "Player",
+		"description": "The square occupied by the Player."
+	},
+	" ": {
+		"name": "Walkable Path",
+		"description": "The tiles where you can move."
+	},
+	"B": {
+		"name": "Barred Door",
+		"description": "Closed doors you need to unlock."
+	},
+	"W": {
+		"name": "Cracked Wall",
+		"description": "A cracked wall."
+	},
+	"C": {
+		"name": "Caramel",
+		"description": "A life-healing medicine."
+	},
+	"A": {
+		"name": "Antidote",
+		"description": "A poison-healing medicine."
+	},
+	"X": {
+		"name": "Ax",
+		"description": "An Ax used to open Barred Doors."
+	},
+	"E": {
+		"name": "Explosive",
+		"description": "An Explosive used to break Cracked Walls."
+	},
+	"M": {
+		"name": "Masamune",
+		"description": "The legendary katana, Masamune."
+	},
+	"O": {
+		"name": "Onyx Armor",
+		"description": "An armor made with a highly durable material."
+	},
+	"N": {
+		"name": "Necronomicon",
+		"description": "A cursed magic book."
+	},
+	"L": {
+		"name": "Lesser Demon",
+		"description": ""
+	},
+	"S": {
+		"name": "Succubus",
+		"description": ""
+	},
+	"H": {
+		"name": "Hell Prison Guard",
+		"description": ""
+	},
+	"G": {
+		"name": "Gaahl",
+		"description": "The final boss."
+	}
+}
