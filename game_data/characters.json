@@ -16,8 +16,8 @@
 		"strength": 7,
 		"magic_power": 10,
 		"defence": 5,
-		"skills": ["pit", "black_magic"],
-		"effect": "posion",
+		"skills": ["spit", "black_magic"],
+		"effect": "poison",
 		"weapon": "",
 		"armor": ""
 	},
