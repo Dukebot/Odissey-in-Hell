@@ -46,7 +46,7 @@ function get_movement_input() {
 function move(x, y) {
 	//Wall
 	if (map[x][y] == "#") {
-		display("You strike against a wall");
+		display("You smash your face against a wall");
 	}
 	//Move the player
 	else if (map[x][y] == " ") {
@@ -61,9 +61,9 @@ function move(x, y) {
 		if (inventory["axes"] > 0) {
 			inventory["axes"]--;
 			map[x][y] = " ";
-			display("You destroy the Barred Door with your axe");
+			display("You destroy the Barred Door with your Ax");
 		} else {
-			display("You need an axe to destroy a Barred Door")
+			display("You need an Ax to destroy a Barred Door")
 		}
 	}
 	//Cracked wall
@@ -71,9 +71,9 @@ function move(x, y) {
 		if (inventory["explosives"] > 0) {
 			inventory["explosives"]--;
 			map[x][y] = " ";
-			display("You destroy the Cracked wall with an explosive");
+			display("You destroy the Cracked Wall with an Explosive");
 		} else {
-			display("You need an explosive to destroy a Cracked Wall")
+			display("You need an Explosive to destroy a Cracked Wall")
 		}
 	}
 	//Caramel
@@ -92,7 +92,7 @@ function move(x, y) {
 	else if (map[x][y] == "X") {
 		inventory["axes"]++
 		map[x][y] = " "
-		display("You've found an Axe")
+		display("You've found an Ax")
 	}
 	//Explosive
 	else if (map[x][y] == "E") {
