@@ -16,14 +16,14 @@
 	"leather_armor": {
 		"name": "Leather Armor",
 		"effect": [
-			["Deffence", 5]
+			["deffence", 5]
 		],
 		"interaction": ""
 	},
 	"onyx_armor": {
 		"name": "Onyx Armor",
 		"effect": [
-			["Deffence", 15]
+			["deffence", 15]
 		],
 		"interaction": "There's an ARMOUR on the floor. You throw your ARMOUR and take the other one, your defence increases considerably."
 	}
