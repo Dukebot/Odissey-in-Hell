@@ -5,10 +5,7 @@ let characters
 let items
 
 let player
-let inventory = {
-	"axes": 0
-}
-
+let inventory
 
 function main() {
 	map = read_json("game_data/map.json");
@@ -16,8 +13,8 @@ function main() {
 	items = read_json("game_data/items.json");
 	
 	player = characters["player"];
+	inventory = read_json("game_data/inventory.json")
 }
-
 
 function move(x, y) {
 	//movemos el jugador
@@ -28,11 +25,14 @@ function move(x, y) {
 		player.y = y;
 		display("You are on " + x + ", " + y);
 	}
-	if (map[x][y]) == "B") {
-		if inventory["axes"] > 0 {
+	//Barred door
+	if (map[x][y] == "B") {
+		if (inventory["axes"] > 0) {
 			inventory["axes"]--;
 			map[x][y] = " ";
-			display("You destroy the barred door with your axe");
+			display("You destroy the Barred Door with your axe");
+		} else {
+			display("You need an axe to destroy a Barred Door")
 		}
 	}
 	//...
