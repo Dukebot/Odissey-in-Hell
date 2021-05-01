@@ -1,30 +1,46 @@
 let map
 let characters
 let items
+let inventory
 
 let player
-let inventory
+let lesser_demon
+let succubus
+let hell_prision_guard
+let gaahl
 
 let game_states = ["move", "combat"]
 let game_state = "move"
 
 function main() {
+	//Read data from JSON
 	map = read_json("game_data/map.json");
 	characters = read_json("game_data/characters.json");
 	items = read_json("game_data/items.json");
-	
-	player = characters["player"];
 	inventory = read_json("game_data/inventory.json")
-
+	
+	//Game Characters
+	player = characters["player"];
+	lesser_demon = characters["lesser_demon"];
+	succubus = characters["succubus"];
+	hell_prision_guard = characters["hell_prision_guard"];
+	gaahl = characters["gaahl"];
+	
 	//Game loop, keep asking what he wants to do until it dies or the game ends
 	while (true) {
 		if (game_state == "move") {
 			let x, y = get_movement_input()
 			move(x, y)
 		} else if (game_state == "combat") {
-			
+			//Combat logic goes here...
 		}
 	}
+}
+
+function get_movement_input() {
+	//Javascript logic to wait for player input in the condole or to select and option from a list!
+	//...
+	return
 }
 
 function move(x, y) {
@@ -102,20 +118,24 @@ function move(x, y) {
 		map[x][y] = " "
 		display("You've found the Necronomicon!")
 	}
-	//Lesset Demon
+	//Lesser Demon
 	else if (map[x][y] == "L") {
-		
+		display("TODO combat with enemy")
+		map[x][y] == " "
 	}
 	//Succubus
 	else if (map[x][y] == "S") {
-		
+		display("TODO combat with enemy")
+		map[x][y] == " "
 	}
 	//Hell prision Guard
 	else if (map[x][y] == "H") {
-		
+		display("TODO combat with enemy")
+		map[x][y] == " "
 	}
 	//Gaahl
 	else if (map[x][y] == "G") {
-		
+		display("TODO combat with enemy")
+		map[x][y] == " "
 	}
 }
