@@ -36,14 +36,14 @@
 	}
 	"scratch": {
 		"name": "Scratch",
-		"power": 40,
+		"power": 7,
 		"is_magic": false,
 		"accuracy": 0.80,
 		"effect": ""
 	}
 	"black_magic": {
 		"name": "Black Magic",
-		"power": 40,
+		"power": 10,
 		"is_magic": true,
 		"accuracy": 0.75,
 		"effect": ""
@@ -56,15 +56,15 @@
 		"effect": "paralysis"
 	}
 	"knives": {
-		"name": "Knifes",
-		"power": 0,
+		"name": "Knives",
+		"power": 10,
 		"is_magic": false,
 		"accuracy": 0.80,
 		"effect": ""
 	}
 	"fireball": {
 		"name": "Fireball",
-		"power": 0,
+		"power": 15,
 		"is_magic": true,
 		"accuracy": 0.75,
 		"effect": ""
@@ -78,35 +78,35 @@
 	}
 	"shot": {
 		"name": "Shot",
-		"power": 0,
+		"power": 20,
 		"is_magic": false,
 		"accuracy": 0.80,
 		"effect": ""
 	}
 	"lightning": {
 		"name": "Lightning",
-		"power": 0,
+		"power": 25,
 		"is_magic": true,
 		"accuracy": 0.75,
 		"effect": ""
 	}
 	"heal": {
 		"name": "Heal",
-		"power": 0,
+		"power": 75,
 		"is_magic": true,
 		"accuracy": 1.0,
 		"effect": ""
 	}
 	"mace": {
 		"name": "Mace",
-		"power": 0,
+		"power": 30,
 		"is_magic": false,
 		"accuracy": 0.80,
 		"effect": ""
 	}
 	"death_dance": {
 		"name": "Death Dance",
-		"power": 0,
+		"power": 40,
 		"is_magic": true,
 		"accuracy": 0.75,
 		"effect": ""
