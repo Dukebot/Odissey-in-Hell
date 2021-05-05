@@ -1,0 +1,54 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://src/Main.gd" type="Script" id=1]
+[ext_resource path="res://src/GameData.gd" type="Script" id=2]
+
+[node name="Main" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="GameData" type="Node" parent="."]
+script = ExtResource( 2 )
+
+[node name="GameTitle" type="Label" parent="."]
+margin_right = 1024.0
+margin_bottom = 136.0
+text = "Odissey In Hell"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="MapLabel" type="Label" parent="."]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -512.0
+margin_top = -300.0
+margin_right = 512.0
+margin_bottom = 300.0
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="TextOutput" type="Label" parent="."]
+margin_top = 488.0
+margin_right = 1024.0
+margin_bottom = 576.0
+align = 1
+valign = 1
+autowrap = true
+
+[node name="InventoryItems" type="Label" parent="."]
+margin_left = 704.0
+margin_top = 128.0
+margin_right = 896.0
+margin_bottom = 448.0
