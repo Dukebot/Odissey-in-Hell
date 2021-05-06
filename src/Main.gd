@@ -113,7 +113,7 @@ func combat_state():
 		var skill_key = enemy_skill_keys[rand_skill_index]
 		var skill = skills[skill_key]
 		
-		player["healh"] = player["health"] - fight_current_enemy["strength"] + skill["power"] - player["defense"]
+		player["health"] = player["health"] - fight_current_enemy["strength"] + skill["power"] - player["defense"]
 		pass
 
 
