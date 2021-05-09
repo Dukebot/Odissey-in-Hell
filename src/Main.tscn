@@ -1,7 +1,11 @@
-[gd_scene load_steps=3 format=2]
+[gd_scene load_steps=7 format=2]
 
 [ext_resource path="res://src/Main.gd" type="Script" id=1]
-[ext_resource path="res://src/GameData.gd" type="Script" id=2]
+[ext_resource path="res://src/game_data/GameData.tscn" type="PackedScene" id=2]
+[ext_resource path="res://src/Draw.gd" type="Script" id=3]
+[ext_resource path="res://src/UseItemState.gd" type="Script" id=4]
+[ext_resource path="res://src/MoveState.gd" type="Script" id=5]
+[ext_resource path="res://src/CombatState.gd" type="Script" id=6]
 
 [node name="Main" type="Control"]
 anchor_right = 1.0
@@ -11,8 +15,19 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="GameData" type="Node" parent="."]
-script = ExtResource( 2 )
+[node name="GameData" parent="." instance=ExtResource( 2 )]
+
+[node name="Drawer" type="Node" parent="."]
+script = ExtResource( 3 )
+
+[node name="MoveState" type="Node" parent="."]
+script = ExtResource( 5 )
+
+[node name="UseItemState" type="Node" parent="."]
+script = ExtResource( 4 )
+
+[node name="CombatState" type="Node" parent="."]
+script = ExtResource( 6 )
 
 [node name="GameTitle" type="Label" parent="."]
 margin_right = 1024.0
@@ -49,6 +64,18 @@ autowrap = true
 
 [node name="InventoryItems" type="Label" parent="."]
 margin_left = 704.0
-margin_top = 128.0
+margin_top = 129.0
 margin_right = 896.0
-margin_bottom = 448.0
+margin_bottom = 449.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="PlayerStats" type="Label" parent="."]
+margin_left = 89.0
+margin_top = 127.0
+margin_right = 281.0
+margin_bottom = 447.0
+__meta__ = {
+"_edit_use_anchors_": false
+}

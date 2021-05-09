@@ -10,12 +10,36 @@ config_version=4
 
 _global_script_classes=[ {
 "base": "Node",
+"class": "CombatState",
+"language": "GDScript",
+"path": "res://src/CombatState.gd"
+}, {
+"base": "Node",
+"class": "Drawer",
+"language": "GDScript",
+"path": "res://src/Draw.gd"
+}, {
+"base": "Node",
 "class": "GameData",
 "language": "GDScript",
-"path": "res://src/GameData.gd"
+"path": "res://src/game_data/GameData.gd"
+}, {
+"base": "Node",
+"class": "MoveState",
+"language": "GDScript",
+"path": "res://src/MoveState.gd"
+}, {
+"base": "Node",
+"class": "UseItemState",
+"language": "GDScript",
+"path": "res://src/UseItemState.gd"
 } ]
 _global_script_class_icons={
-"GameData": ""
+"CombatState": "",
+"Drawer": "",
+"GameData": "",
+"MoveState": "",
+"UseItemState": ""
 }
 
 [application]
@@ -26,7 +50,7 @@ config/icon="res://icon.png"
 
 [autoload]
 
-Utils="*res://src/Utils.gd"
+Utils="*res://src/singletons/Utils.gd"
 
 [gui]
 
