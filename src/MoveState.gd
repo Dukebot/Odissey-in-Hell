@@ -35,43 +35,37 @@ func move(x: int, y: int) -> void:
 	if map[x][y] == "#":
 		show_message("You smash your face against a wall")
 	elif map[x][y] == " ":
-		set_player_pos(x, y)
+		set_player_pos(x, y, map)
 		show_message("")
 	
 	#Grab item
 	elif map[x][y] == "X":
 		inventory["axes"] += 1
-		map[x][y] = " "
+		set_player_pos(x, y, map)
 		show_message("You've found an Ax")
-	
 	elif map[x][y] == "A":
 		inventory["antidotes"] += 1
-		map[x][y] = " "
+		set_player_pos(x, y, map)
 		show_message("You've found an Antidote")
-	
 	elif map[x][y] == "C":
 		inventory["caramels"] += 1
-		map[x][y] = " "
+		set_player_pos(x, y, map)
 		show_message("You've found a Caramel")
-	
 	elif map[x][y] == "E":
 		inventory["explosives"] += 1
-		map[x][y] = " "
+		set_player_pos(x, y, map)
 		show_message("You've found an Explosive")
-	
 	elif map[x][y] == "M":
 		player["weapon"] = "masamune"
-		map[x][y] = " "
+		set_player_pos(x, y, map)
 		show_message("You've found the Masamune!")
-	
 	elif map[x][y] == "O":
 		player["armor"] = "onyx_armor"
-		map[x][y] = " "
+		set_player_pos(x, y, map)
 		show_message("You've found the Onyx Armor!")
-	
 	elif map[x][y] == "N":
 		player["weapon"] = "necronomicon"
-		map[x][y] = " "
+		set_player_pos(x, y, map)
 		show_message("You've found the Necronomicon!")
 	
 	#Use item
@@ -81,7 +75,6 @@ func move(x: int, y: int) -> void:
 			main.set_use_item_state("axes", x, y)
 		else:
 			show_message("You need an Ax to destroy a Barred Door")
-
 	elif map[x][y] == "W":
 		if inventory["explosives"] > 0:
 			show_message("Do you want to use an Explosive to destroy the Cracked Wall?\n\nY/N")
@@ -91,25 +84,16 @@ func move(x: int, y: int) -> void:
 	
 	#Enemy combat
 	elif map[x][y] == "L":
-		#show_message("TODO combat with enemy")
-		#map[x][y] = " "
 		main.set_combat_state("lesser_demon", x, y)
-	
 	elif map[x][y] == "S":
-		show_message("TODO combat with enemy")
-		map[x][y] = " "
-	
+		main.set_combat_state("succubus", x, y)
 	elif map[x][y] == "H":
-		show_message("TODO combat with enemy")
-		map[x][y] = " "
-	
+		main.set_combat_state("hell_prision_guard", x, y)
 	elif map[x][y] == "G":
-		show_message("TODO combat with enemy")
-		map[x][y] = " "
+		main.set_combat_state("gaahl", x, y)
 
 
-func set_player_pos(x: int, y: int) -> void:
-	var map = main.map
+func set_player_pos(x: int, y: int, map: Array) -> void:
 	map[player_x][player_y] = " "
 	map[x][y] = "P"
 	player_x = x
