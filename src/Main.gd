@@ -26,7 +26,7 @@ onready var player = characters["player"]
 
 
 func _ready():
-	move_state.init()
+	move_state.init(map)
 	drawer.draw()
 
 
@@ -40,24 +40,19 @@ func _process(delta):
 	drawer.draw()
 
 
+func show_message(text: String) -> void:
+	text_output_label.text = text
+
+
+#State changing
+
 func set_move_state():
 	game_state = GameState.MOVE
 
-
 func set_use_item_state(item_name: String, target_x: int, target_y: int) -> void:
 	game_state = GameState.USE_ITEM
-	use_item_state.item = item_name
-	use_item_state.item_x = target_x
-	use_item_state.item_y = target_y
-
+	use_item_state.set_state(item_name, target_x, target_y)
 
 func set_combat_state(enemy_key: String, enemy_x: int, enemy_y: int) -> void:
 	game_state = GameState.COMBAT
-	combat_state.turn = 0
-	combat_state.enemy = characters[enemy_key].duplicate()
-	combat_state.enemy_x = enemy_x
-	combat_state.enemy_y = enemy_y
-
-
-func show_message(text: String) -> void:
-	text_output_label.text = text
+	combat_state.set_state(enemy_key, enemy_x, enemy_y)

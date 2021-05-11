@@ -29,4 +29,8 @@ func process_state() -> void:
 		main.set_move_state()
 
 
+func set_state(item: String, item_x: int, item_y: int):
+	self.item = item
+	self.item_x = item_x
+	self.item_y = item_y
 

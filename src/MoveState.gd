@@ -6,8 +6,7 @@ var player_y: int
 onready var main = get_parent()
 
 
-func init():
-	var map = main.map
+func init(map: Array):
 	for i in map.size():
 		for j in map[i].size():
 			if map[i][j] == "P":
