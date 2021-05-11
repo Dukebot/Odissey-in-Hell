@@ -93,7 +93,7 @@ func move(x: int, y: int) -> void:
 	elif map[x][y] == "L":
 		#show_message("TODO combat with enemy")
 		#map[x][y] = " "
-		main.set_combat_state("lesser_demon")
+		main.set_combat_state("lesser_demon", x, y)
 	
 	elif map[x][y] == "S":
 		show_message("TODO combat with enemy")

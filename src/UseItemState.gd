@@ -8,10 +8,9 @@ onready var main = get_parent()
 
 
 func process_state() -> void:
-	_process_state(main.inventory, main.map)
-
-
-func _process_state(inventory: Dictionary, map: Dictionary) -> void:
+	var inventory = main.inventory
+	var map = main.map
+	
 	if Input.is_action_just_pressed("yes"):
 		inventory[use_item] -= 1
 		
@@ -28,3 +27,6 @@ func _process_state(inventory: Dictionary, map: Dictionary) -> void:
 	elif Input.is_action_just_pressed("no"):
 		main.show_message("")
 		main.set_move_state()
+
+
+

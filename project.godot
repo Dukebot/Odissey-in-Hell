@@ -14,7 +14,7 @@ _global_script_classes=[ {
 "language": "GDScript",
 "path": "res://src/CombatState.gd"
 }, {
-"base": "Reference",
+"base": "Node",
 "class": "Drawer",
 "language": "GDScript",
 "path": "res://src/Drawer.gd"
@@ -22,7 +22,7 @@ _global_script_classes=[ {
 "base": "Node",
 "class": "GameData",
 "language": "GDScript",
-"path": "res://src/game_data/GameData.gd"
+"path": "res://src/GameData.gd"
 }, {
 "base": "Node",
 "class": "MoveState",
@@ -101,6 +101,11 @@ skill_2={
 skill_3={
 "deadzone": 0.5,
 "events": [ Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":0,"alt":false,"shift":false,"control":false,"meta":false,"command":false,"pressed":false,"scancode":51,"unicode":0,"echo":false,"script":null)
+ ]
+}
+continue={
+"deadzone": 0.5,
+"events": [ Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":0,"alt":false,"shift":false,"control":false,"meta":false,"command":false,"pressed":false,"scancode":32,"unicode":0,"echo":false,"script":null)
  ]
 }
 

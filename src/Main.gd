@@ -26,7 +26,7 @@ onready var player = characters["player"]
 
 
 func _ready():
-	move_state.init(map)
+	move_state.init()
 	drawer.draw()
 
 

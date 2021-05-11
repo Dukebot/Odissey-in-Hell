@@ -1,7 +1,7 @@
 [gd_scene load_steps=7 format=2]
 
 [ext_resource path="res://src/Main.gd" type="Script" id=1]
-[ext_resource path="res://src/game_data/GameData.tscn" type="PackedScene" id=2]
+[ext_resource path="res://src/GameData.gd" type="Script" id=2]
 [ext_resource path="res://src/Drawer.gd" type="Script" id=3]
 [ext_resource path="res://src/UseItemState.gd" type="Script" id=4]
 [ext_resource path="res://src/MoveState.gd" type="Script" id=5]
@@ -15,7 +15,8 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="GameData" parent="." instance=ExtResource( 2 )]
+[node name="GameData" type="Node" parent="."]
+script = ExtResource( 2 )
 
 [node name="Drawer" type="Node" parent="."]
 script = ExtResource( 3 )
