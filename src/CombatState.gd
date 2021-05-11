@@ -27,14 +27,13 @@ func process_state():
 		var skill_key = get_skill_selection(player)
 		if skill_key:
 			attack(player, skill_key, enemy)
-			if enemy["health"] < 0:
-				map[enemy_x][enemy_y] = " "
 			turn += 1
 	
 	elif turn == 3:
 		main.show_message(last_attack_result_text + "\nPress SPACE to continue")
 		if Input.is_action_just_pressed("continue"):
 			if enemy["health"] < 0:
+				map[enemy_x][enemy_y] = " "
 				main.set_move_state()
 				main.show_message("You've defeated " + enemy["name"])
 			else:
@@ -45,16 +44,17 @@ func process_state():
 		var rand_skill_index = Utils.get_random_array_index(enemy_skill_keys)
 		var skill_key = enemy_skill_keys[rand_skill_index]
 		attack(enemy, skill_key, player)
-		if player["health"] < 0:
-			print("Game Over...")
-			main.set_move_state()
-			main.show_message("You've been defeated...")
 		turn += 1
 	
 	elif turn == 5:
 		main.show_message(last_attack_result_text + "\nPress SPACE to continue")
 		if Input.is_action_just_pressed("continue"):
-			turn = 1
+			if player["health"] < 0:
+				print("Game Over...")
+				main.set_move_state()
+				main.show_message("You've been defeated...")
+			else:
+				turn = 1
 
 
 func set_state(enemy_key: String, enemy_x: int, enemy_y: int):

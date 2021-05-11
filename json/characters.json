@@ -32,7 +32,7 @@
 		"weapon": "",
 		"armor": ""
 	},
-	"hell_prision_ward": {
+	"hell_prision_guard": {
 		"name": "Hell Prision Guard",
 		"health": 170,
 		"strength": 30,

@@ -9,11 +9,12 @@ onready var main = get_parent()
 
 func process_state() -> void:
 	if Input.is_action_just_pressed("yes"):
-		var inventory = main.inventory
 		var map = main.map
 		
-		inventory[item] -= 1
-		
+		if item == "caramels":
+			main.player["health"] += 10
+			main.show_message("You use a Caramel and heal an amount")
+			
 		if map[item_x][item_y] == "B":
 			map[item_x][item_y] = " "
 			main.show_message("You destroy the Barred Door with your Ax")
@@ -22,6 +23,7 @@ func process_state() -> void:
 			map[item_x][item_y] = " "
 			main.show_message("You destroy the Cracked Wall with your Explosive")
 		
+		main.inventory[item] -= 1
 		main.set_move_state()
 	
 	elif Input.is_action_just_pressed("no"):

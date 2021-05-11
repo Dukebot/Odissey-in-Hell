@@ -26,7 +26,7 @@ onready var player = characters["player"]
 
 
 func _ready():
-	move_state.init(map)
+	move_state.init()
 	drawer.draw()
 
 
@@ -49,9 +49,10 @@ func show_message(text: String) -> void:
 func set_move_state():
 	game_state = GameState.MOVE
 
-func set_use_item_state(item_name: String, target_x: int, target_y: int) -> void:
+func set_use_item_state(item_name: String, target_x: int, target_y: int, message: String) -> void:
 	game_state = GameState.USE_ITEM
 	use_item_state.set_state(item_name, target_x, target_y)
+	show_message(message + "\n\nY/N")
 
 func set_combat_state(enemy_key: String, enemy_x: int, enemy_y: int) -> void:
 	game_state = GameState.COMBAT
