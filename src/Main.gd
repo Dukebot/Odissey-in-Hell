@@ -26,9 +26,7 @@ onready var player = characters["player"]
 
 
 func _ready():
-	move_state.init()
-	use_item_state.init()
-	combat_state.init()
+	move_state.init(map)
 	drawer.draw()
 
 
@@ -53,10 +51,12 @@ func set_use_item_state(item_name: String, target_x: int, target_y: int) -> void
 	use_item_state.use_item_y = target_y
 
 
-func set_combat_state(enemy_key: String) -> void:
+func set_combat_state(enemy_key: String, enemy_x: int, enemy_y: int) -> void:
 	game_state = GameState.COMBAT
-	combat_state.fight_current_turn = 0
-	combat_state.fight_current_enemy = characters[enemy_key].duplicate()
+	combat_state.turn = 0
+	combat_state.enemy = characters[enemy_key].duplicate()
+	combat_state.enemy_x = enemy_x
+	combat_state.enemy_y = enemy_y
 
 
 func show_message(text: String) -> void:

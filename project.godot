@@ -14,10 +14,10 @@ _global_script_classes=[ {
 "language": "GDScript",
 "path": "res://src/CombatState.gd"
 }, {
-"base": "Node",
+"base": "Reference",
 "class": "Drawer",
 "language": "GDScript",
-"path": "res://src/Draw.gd"
+"path": "res://src/Drawer.gd"
 }, {
 "base": "Node",
 "class": "GameData",

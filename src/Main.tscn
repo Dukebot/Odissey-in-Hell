@@ -2,7 +2,7 @@
 
 [ext_resource path="res://src/Main.gd" type="Script" id=1]
 [ext_resource path="res://src/game_data/GameData.tscn" type="PackedScene" id=2]
-[ext_resource path="res://src/Draw.gd" type="Script" id=3]
+[ext_resource path="res://src/Drawer.gd" type="Script" id=3]
 [ext_resource path="res://src/UseItemState.gd" type="Script" id=4]
 [ext_resource path="res://src/MoveState.gd" type="Script" id=5]
 [ext_resource path="res://src/CombatState.gd" type="Script" id=6]

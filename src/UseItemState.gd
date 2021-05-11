@@ -4,18 +4,14 @@ var use_item: String = ""
 var use_item_x: int
 var use_item_y: int
 
-var map
-var inventory
-
 onready var main = get_parent()
 
 
-func init():
-	map = main.map
-	inventory = main.inventory
-
-
 func process_state() -> void:
+	_process_state(main.inventory, main.map)
+
+
+func _process_state(inventory: Dictionary, map: Dictionary) -> void:
 	if Input.is_action_just_pressed("yes"):
 		inventory[use_item] -= 1
 		

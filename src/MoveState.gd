@@ -3,18 +3,11 @@ class_name MoveState extends Node
 var player_x: int
 var player_y: int
 
-var map
-var player
-var inventory
-
 onready var main = get_parent()
 
 
 func init():
-	map = main.map
-	player = main.player
-	inventory = main.inventory
-	
+	var map = main.map
 	for i in map.size():
 		for j in map[i].size():
 			if map[i][j] == "P":
@@ -34,6 +27,10 @@ func process_state() -> void:
 
 
 func move(x: int, y: int) -> void:
+	var map = main.map
+	var inventory = main.inventory
+	var player = main.player
+	
 	#Basic Movement
 	if map[x][y] == "#":
 		show_message("You smash your face against a wall")
@@ -112,6 +109,7 @@ func move(x: int, y: int) -> void:
 
 
 func set_player_pos(x: int, y: int) -> void:
+	var map = main.map
 	map[player_x][player_y] = " "
 	map[x][y] = "P"
 	player_x = x
