@@ -53,7 +53,7 @@
 		"power": 0,
 		"is_magic": true,
 		"accuracy": 0.50,
-		"effect": "paralysis"
+		"effect": "confusion"
 	},
 	"knives": {
 		"name": "Knives",
