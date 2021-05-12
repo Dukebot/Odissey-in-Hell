@@ -29,6 +29,11 @@ func process_state() -> void:
 			main.set_use_item_state("caramels", player_x, player_y, "Do you want to use a Caramel?")
 		else:
 			main.show_message("You don't have any Caramels")
+	elif Input.is_action_just_pressed("use_antidote"):
+		if main.inventory["antidotes"] > 0:
+			main.set_use_item_state("antidotes", player_x, player_y, "Do you want to use an Antidote?")
+		else:
+			main.show_message("You don't have any Antidotes")
 
 
 func move(x: int, y: int) -> void:

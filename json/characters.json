@@ -5,8 +5,8 @@
 		"strength": 0,
 		"magic_power": 0,
 		"defence": 0,
-		"skills": ["cut", "thrust", "slash", "magic"],
-		"effect": "",
+		"skills": ["cut", "thrust", "slash"],
+		"status_ailment": [],
 		"weapon": "copper_sword",
 		"armor": "leather_armor"
 	},
@@ -17,7 +17,7 @@
 		"magic_power": 5,
 		"defence": 5,
 		"skills": ["spit", "black_magic", "scratch"],
-		"effect": "poison",
+		"status_ailment": [],
 		"weapon": "",
 		"armor": ""
 	},
@@ -28,7 +28,7 @@
 		"magic_power": 20,
 		"defence": 10,
 		"skills": ["kiss", "knives", "fireball"],
-		"effect": "paralysis",
+		"status_ailment": [],
 		"weapon": "",
 		"armor": ""
 	},
@@ -39,7 +39,7 @@
 		"magic_power": 45,
 		"defence": 20,
 		"skills": ["electroshock", "shot", "lightning"],
-		"effect": "stun",
+		"status_ailment": [],
 		"weapon": "",
 		"armor": ""
 	},
@@ -50,7 +50,7 @@
 		"magic_power": 60,
 		"defence": 30,
 		"skills": ["death_dance", "mace", "heal"],
-		"effect": "",
+		"status_ailment": [],
 		"weapon": "",
 		"armor": ""
 	}

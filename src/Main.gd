@@ -21,6 +21,7 @@ onready var map = game_data.map
 onready var inventory = game_data.inventory
 onready var characters = game_data.characters
 onready var skills = game_data.skills
+onready var items = game_data.items
 
 onready var player = characters["player"]
 

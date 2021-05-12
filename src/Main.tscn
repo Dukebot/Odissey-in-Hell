@@ -73,7 +73,6 @@ __meta__ = {
 }
 
 [node name="PlayerStats" type="Label" parent="."]
-visible = false
 margin_left = 89.0
 margin_top = 127.0
 margin_right = 281.0

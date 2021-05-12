@@ -5,3 +5,7 @@ onready var characters = Utils.get_json_result("res://json/characters.json")
 onready var inventory = Utils.get_json_result("res://json/inventory.json")
 onready var items = Utils.get_json_result("res://json/items.json")
 onready var skills = Utils.get_json_result("res://json/skills.json")
+
+
+func _ready():
+	print(items)

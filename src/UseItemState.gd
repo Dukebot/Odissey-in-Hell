@@ -10,12 +10,22 @@ onready var main = get_parent()
 func process_state() -> void:
 	if Input.is_action_just_pressed("yes"):
 		var map = main.map
+		var player = main.player
 		
 		if item == "caramels":
-			main.player["health"] += 10
+			player["health"] += 10
 			main.show_message("You use a Caramel and heal an amount")
-			
-		if map[item_x][item_y] == "B":
+		
+		elif item == "antidotes":
+			var status_ailments = []
+			for i in player["status_ailment"].size():
+				var status_ailment = player["status_ailment"][i]
+				if status_ailment != "poison":
+					status_ailments.append(status_ailment)
+			player["status_ailment"] = status_ailments
+			main.show_message("You use an Antidote and heal the poison")
+		
+		elif map[item_x][item_y] == "B":
 			map[item_x][item_y] = " "
 			main.show_message("You destroy the Barred Door with your Ax")
 		
