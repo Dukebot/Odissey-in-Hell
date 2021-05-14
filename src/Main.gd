@@ -57,4 +57,4 @@ func set_use_item_state(item_name: String, target_x: int, target_y: int, message
 
 func set_combat_state(enemy_key: String, enemy_x: int, enemy_y: int) -> void:
 	game_state = GameState.COMBAT
-	combat_state.set_state(enemy_key, enemy_x, enemy_y)
+	combat_state.set_state(characters[enemy_key], enemy_x, enemy_y)

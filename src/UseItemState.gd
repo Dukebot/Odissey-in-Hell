@@ -17,12 +17,7 @@ func process_state() -> void:
 			main.show_message("You use a Caramel and heal an amount")
 		
 		elif item == "antidotes":
-			var status_ailments = []
-			for i in player["status_ailment"].size():
-				var status_ailment = player["status_ailment"][i]
-				if status_ailment != "poison":
-					status_ailments.append(status_ailment)
-			player["status_ailment"] = status_ailments
+			Character.remove_status_ailment(player, "poison")
 			main.show_message("You use an Antidote and heal the poison")
 		
 		elif map[item_x][item_y] == "B":
@@ -45,4 +40,3 @@ func set_state(item: String, item_x: int, item_y: int):
 	self.item = item
 	self.item_x = item_x
 	self.item_y = item_y
-

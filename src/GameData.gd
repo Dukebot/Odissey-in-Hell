@@ -8,4 +8,6 @@ onready var skills = Utils.get_json_result("res://json/skills.json")
 
 
 func _ready():
-	print(items)
+	for key in characters.keys():
+		var character = characters[key]
+		character["max_health"] = character["health"]

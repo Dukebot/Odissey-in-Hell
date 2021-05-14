@@ -16,6 +16,7 @@ func init():
 
 
 func process_state() -> void:
+	#Movement
 	if Input.is_action_just_pressed("move_up"):
 		move(player_x - 1, player_y)
 	elif Input.is_action_just_pressed("move_down"):
@@ -24,14 +25,24 @@ func process_state() -> void:
 		move(player_x, player_y - 1)
 	elif Input.is_action_just_pressed("move_right"):
 		move(player_x, player_y + 1)
-	elif Input.is_action_just_pressed("use_caramel"):
-		if main.inventory["caramels"] > 0:
-			main.set_use_item_state("caramels", player_x, player_y, "Do you want to use a Caramel?")
+	
+	#Inventory Item usage
+	var inventory = main.inventory
+	var player = main.player
+	if Input.is_action_just_pressed("use_caramel"):
+		if inventory["caramels"] > 0:
+			if player["health"] < player["max_health"]:
+				main.set_use_item_state("caramels", player_x, player_y, "Do you want to use a Caramel?")
+			else:
+				main.show_message("You are full health")
 		else:
 			main.show_message("You don't have any Caramels")
 	elif Input.is_action_just_pressed("use_antidote"):
-		if main.inventory["antidotes"] > 0:
-			main.set_use_item_state("antidotes", player_x, player_y, "Do you want to use an Antidote?")
+		if inventory["antidotes"] > 0:
+			if Character.has_status_ailment(player, "poison"):
+				main.set_use_item_state("antidotes", player_x, player_y, "Do you want to use an Antidote?")
+			else:
+				main.show_message("You are not poisoned")
 		else:
 			main.show_message("You don't have any Antidotes")
 

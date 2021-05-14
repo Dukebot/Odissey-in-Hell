@@ -10,6 +10,11 @@ config_version=4
 
 _global_script_classes=[ {
 "base": "Node",
+"class": "Character",
+"language": "GDScript",
+"path": "res://src/Characters.gd"
+}, {
+"base": "Node",
 "class": "CombatState",
 "language": "GDScript",
 "path": "res://src/CombatState.gd"
@@ -35,6 +40,7 @@ _global_script_classes=[ {
 "path": "res://src/UseItemState.gd"
 } ]
 _global_script_class_icons={
+"Character": "",
 "CombatState": "",
 "Drawer": "",
 "GameData": "",
