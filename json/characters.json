@@ -1,7 +1,7 @@
 {
 	"player": {
-		"name": "player_name",
-		"health": 100,
+		"name": "Player",
+		"health": 1000,
 		"strength": 0,
 		"magic_power": 0,
 		"defence": 0,

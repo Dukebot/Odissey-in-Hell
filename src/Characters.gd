@@ -27,16 +27,11 @@ static func calculate_defence(character: Dictionary, items: Dictionary) -> int:
 
 
 static func add_ailment_state(character: Dictionary, status_ailment: String) -> bool:
-	var status_found := false
-	for _status_ailment in character["status_ailment"]:
-		if _status_ailment == status_ailment:
-			status_found = true
-			break
-	if not status_found:
+	var ailmend_status_added: bool = false
+	if not has_status_ailment(character, status_ailment):
 		character["status_ailment"].append(status_ailment)
-	
-	var status_ailment_added: bool = not status_found
-	return status_ailment_added
+		ailmend_status_added = true
+	return ailmend_status_added
 
 
 static func remove_status_ailment(character: Dictionary, status_ailment: String) -> void:
