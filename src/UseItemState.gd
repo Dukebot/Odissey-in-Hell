@@ -21,12 +21,12 @@ func process_state() -> void:
 		
 		elif map[item_x][item_y] == "B":
 			map[item_x][item_y] = " "
-			main.show_message("You destroy the Barred Door with your Ax")
+			main.show_message("You open the Barred Door with the Ax")
 			inventory[item] -= 1
 		
 		elif map[item_x][item_y] == "W":
 			map[item_x][item_y] = " "
-			main.show_message("You destroy the Cracked Wall with your Explosive")
+			main.show_message("You destroy the Cracked Wall with the Explosive")
 			inventory[item] -= 1
 		
 		main.set_move_state()

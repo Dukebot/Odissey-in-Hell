@@ -88,7 +88,7 @@ func player_turn():
 		if enemy["health"] < 0:
 			map[enemy_x][enemy_y] = " "
 			main.set_move_state()
-			main.show_message("You've defeated " + enemy["name"])
+			main.show_message("You defeated the " + enemy["name"])
 		else:
 			turn = 1
 			turn_phase = 0
@@ -100,7 +100,7 @@ func status_ailment_phase(character: Dictionary):
 		for status_ailment in status_ailments:
 			if status_ailment == "poison":
 				character["health"] -= 5
-				messages.append("The poison inficts, 5 damage to " + character["name"])
+				messages.append("The poison lowers " + character["name"] + "'s health by 5 points")
 			elif status_ailment == "stun":
 				messages.append("You are stunned and can't act this turn.")
 

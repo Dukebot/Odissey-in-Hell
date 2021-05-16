@@ -8,7 +8,7 @@ static func get_use_caramel_message(inventory: Dictionary, player: Dictionary) -
 		if player["health"] < player["max_health"]:
 			message = "Do you want to use a Caramel?"
 		else:
-			message = "You are full health"
+			message = "Your are not hurt"
 	else:
 		message = "You don't have any Caramels"
 	return message
@@ -24,7 +24,7 @@ static func can_use_caramel(inventory: Dictionary, player: Dictionary) -> bool:
 static func use_caramel(inventory: Dictionary, player: Dictionary) -> String:
 	player["health"] += 10
 	inventory["caramels"] -= 1
-	return "You use a Caramel and heal 10 points of life"
+	return "You use a Caramel and recover 10 health points"
 
 
 #Antidotes...
@@ -51,4 +51,4 @@ static func can_use_antidote(inventory: Dictionary, player: Dictionary) -> bool:
 static func use_antidote(inventory: Dictionary, player: Dictionary) -> String:
 	Character.remove_status_ailment(player, "poison")
 	inventory["antidotes"] -= 1
-	return "You use an Antidote and heal the poison"
+	return "The Antidote washes the poison off your blood"
