@@ -11,24 +11,24 @@ func process_state() -> void:
 	if Input.is_action_just_pressed("yes"):
 		var map = main.map
 		var player = main.player
+		var inventory = main.inventory
 		
 		if item == "caramels":
-			player["health"] += 10
-			main.show_message("You use a Caramel and heal an amount")
+			main.show_message(Inventory.use_caramel(inventory, player))
 		
 		elif item == "antidotes":
-			Character.remove_status_ailment(player, "poison")
-			main.show_message("You use an Antidote and heal the poison")
+			main.show_message(Inventory.use_antidote(inventory, player))
 		
 		elif map[item_x][item_y] == "B":
 			map[item_x][item_y] = " "
 			main.show_message("You destroy the Barred Door with your Ax")
+			inventory[item] -= 1
 		
 		elif map[item_x][item_y] == "W":
 			map[item_x][item_y] = " "
 			main.show_message("You destroy the Cracked Wall with your Explosive")
+			inventory[item] -= 1
 		
-		main.inventory[item] -= 1
 		main.set_move_state()
 	
 	elif Input.is_action_just_pressed("no"):

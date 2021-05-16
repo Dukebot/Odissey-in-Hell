@@ -62,6 +62,9 @@ margin_bottom = 576.0
 align = 1
 valign = 1
 autowrap = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
 
 [node name="InventoryItems" type="Label" parent="."]
 margin_left = 704.0
