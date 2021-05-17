@@ -50,3 +50,15 @@ static func has_status_ailment(character: Dictionary, status_ailment: String) ->
 			has_ailment = true
 			break
 	return has_ailment
+
+
+static func status_ailment_phase(character: Dictionary):
+	var status_ailments = character["status_ailment"]
+	if status_ailments.size() > 0:
+		for status_ailment in status_ailments:
+			if status_ailment == "poison":
+				character["health"] -= 5
+				return "The poison lowers " + character["name"] + "'s health by 5 points"
+			elif status_ailment == "stun":
+				return character["name"] + "is stunned and can't act this turn."
+	return null

@@ -50,7 +50,8 @@ func player_turn():
 	var inventory = main.inventory
 	
 	if turn_phase == 0:
-		status_ailment_phase(player)
+		var result = Character.status_ailment_phase(player)
+		if result: messages.append(result)
 		turn_phase += 1
 	elif turn_phase == 1:
 		if Character.has_status_ailment(player, "stun"):
@@ -58,35 +59,16 @@ func player_turn():
 			turn = 1
 			turn_phase = 0
 		else:
-			show_attack_selection(player)
-
-			var skill_key = get_skill_selection(player)
+			show_attack_selection()
+			var skill_key = get_skill_selection()
 			if skill_key:
-				print("Usamos un ataque")
 				attack(player, skill_key, enemy)
-				turn_phase += 1
-			
 			var item_key = get_item_selection()
 			if item_key:
-				#Item usage
-				print("Usamos un objeto")
-				if item_key == "caramels":
-					var message = Inventory.get_use_caramel_message(inventory, player)
-					if Inventory.can_use_caramel(inventory, player):
-						messages.append(Inventory.use_caramel(inventory, player))
-						turn_phase += 1
-					else:
-						messages.append(message)
-				elif item_key == "antidotes":
-					var message = Inventory.get_use_antidote_message(inventory, player)
-					if Inventory.can_use_antidote(inventory, player):
-						messages.append(Inventory.use_antidote(inventory, player))
-						turn_phase += 1
-					else:
-						messages.append(message)
+				use_item(item_key)
 	elif turn_phase == 2:
 		if enemy["health"] < 0:
-			map[enemy_x][enemy_y] = " "
+			main.map[enemy_x][enemy_y] = " "
 			main.set_move_state()
 			main.show_message("You defeated the " + enemy["name"])
 		else:
@@ -94,34 +76,23 @@ func player_turn():
 			turn_phase = 0
 
 
-func status_ailment_phase(character: Dictionary):
-	var status_ailments = character["status_ailment"]
-	if status_ailments.size() > 0:
-		for status_ailment in status_ailments:
-			if status_ailment == "poison":
-				character["health"] -= 5
-				messages.append("The poison lowers " + character["name"] + "'s health by 5 points")
-			elif status_ailment == "stun":
-				messages.append("You are stunned and can't act this turn.")
-
-
-func show_attack_selection(player: Dictionary):
+func show_attack_selection():
 	var text = "Select your attack:"
 	var i = 0
-	for skill in player["skills"]:
+	for skill in main.player["skills"]:
 		i += 1
 		text += "\n" + str(i) + " - " + skill
 	main.show_message(text)
 
 
-func get_skill_selection(player: Dictionary):
+func get_skill_selection():
 	var skill_key
 	if Input.is_action_just_pressed("skill_1"):
-		skill_key = player["skills"][0]
+		skill_key = main.player["skills"][0]
 	elif Input.is_action_just_pressed("skill_2"):
-		skill_key = player["skills"][1]
+		skill_key = main.player["skills"][1]
 	elif Input.is_action_just_pressed("skill_3"):
-		skill_key = player["skills"][2]
+		skill_key = main.player["skills"][2]
 	return skill_key
 
 
@@ -135,16 +106,14 @@ func get_item_selection():
 
 
 func enemy_turn():
-	var player = main.player
-	
 	if turn_phase == 0:
 		var enemy_skill_keys = enemy["skills"]
 		var rand_skill_index = Utils.get_random_array_index(enemy_skill_keys)
 		var skill_key = enemy_skill_keys[rand_skill_index]
-		attack(enemy, skill_key, player)
-		turn_phase += 1
+		
+		attack(enemy, skill_key, main.player)
 	elif turn_phase == 1:
-		if player["health"] < 0:
+		if main.player["health"] < 0:
 			print("Game Over...")
 			main.set_move_state()
 			main.show_message("You've been defeated...")
@@ -155,11 +124,10 @@ func enemy_turn():
 
 func attack(attacker: Dictionary, skill_key: String, target: Dictionary):
 	var skill = main.skills[skill_key]
-	var items = main.items
 	
-	var damage = Character.calculate_attack_damage(attacker, skill, items)
+	var damage = Character.calculate_attack_damage(attacker, skill, main.items)
 	if not skill["is_magic"]:
-		damage -= Character.calculate_defence(target, items)
+		damage -= Character.calculate_defence(target, main.items)
 	
 	if rand_range(0, 1) < skill["accuracy"]:
 		target["health"] = target["health"] - damage
@@ -171,3 +139,27 @@ func attack(attacker: Dictionary, skill_key: String, target: Dictionary):
 				messages.append(skill["effect"] + " status ailment added.")
 	else:
 		messages.append(attacker["name"] + " used " + skill["name"] + " and missed!")
+	
+	turn_phase += 1
+
+
+func use_item(item_key: String) -> void:
+	var inventory = main.inventory
+	var player = main.player
+	
+	if item_key == "caramels":
+		var message = Inventory.get_use_caramel_message(inventory, player)
+		
+		if Inventory.can_use_caramel(inventory, player):
+			messages.append(Inventory.use_caramel(inventory, player))
+			turn_phase += 1
+		else:
+			messages.append(message)
+	elif item_key == "antidotes":
+		var message = Inventory.get_use_antidote_message(inventory, player)
+		
+		if Inventory.can_use_antidote(inventory, player):
+			messages.append(Inventory.use_antidote(inventory, player))
+			turn_phase += 1
+		else:
+			messages.append(message)

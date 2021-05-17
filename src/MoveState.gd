@@ -6,7 +6,7 @@ var player_y: int
 onready var main = get_parent()
 
 
-func init():
+func init() -> void:
 	var map = main.map
 	for i in map.size():
 		for j in map[i].size():
