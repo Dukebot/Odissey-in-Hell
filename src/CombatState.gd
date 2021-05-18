@@ -46,34 +46,55 @@ func set_state(enemy: Dictionary, enemy_x: int, enemy_y: int):
 
 func player_turn():
 	var player = main.player
-	var map = main.map
-	var inventory = main.inventory
 	
+	#PreAction Phase
 	if turn_phase == 0:
-		var result = Character.status_ailment_phase(player)
-		if result: messages.append(result)
+		var status_ailments = player["status_ailment"]
+		if status_ailments.size() > 0:
+			for status_ailment in status_ailments:
+				if status_ailment == "poison":
+					messages.append(Character.apply_poison(player))
 		turn_phase += 1
+	#Action Phase
 	elif turn_phase == 1:
 		if Character.has_status_ailment(player, "stun"):
 			Character.remove_status_ailment(player, "stun")
+			messages.append(player["name"] + " is stunned and can't act this turn.")
 			turn = 1
 			turn_phase = 0
+		elif Character.has_status_ailment(player, "confusion"):
+			if player["confusion_turns"] > 0:
+				player["confusion_turns"] -= 1
+				if player["confusion_turns"] == 0:
+					Character.remove_status_ailment(player, "confusion")
+				if rand_range(0, 1) < 0.33:
+					messages.append(player["name"] + " is confused and can't attack this turn")
+					turn = 1
+					turn_phase = 0
+				else:
+					player_action_selection()
 		else:
-			show_attack_selection()
-			var skill_key = get_skill_selection()
-			if skill_key:
-				attack(player, skill_key, enemy)
-			var item_key = get_item_selection()
-			if item_key:
-				use_item(item_key)
+			player_action_selection()
+	#Action resolution and turn switch phase
 	elif turn_phase == 2:
 		if enemy["health"] < 0:
 			main.map[enemy_x][enemy_y] = " "
+			main.inventory["caramels"] += 1
 			main.set_move_state()
-			main.show_message("You defeated the " + enemy["name"])
+			main.show_message("You obtain a Caramel for defeating " + enemy["name"])
 		else:
 			turn = 1
 			turn_phase = 0
+
+
+func player_action_selection():
+	show_attack_selection()
+	var skill_key = get_skill_selection()
+	if skill_key:
+		attack(main.player, skill_key, enemy)
+	var item_key = get_item_selection()
+	if item_key:
+		use_item(item_key)
 
 
 func show_attack_selection():

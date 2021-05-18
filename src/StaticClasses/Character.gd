@@ -36,6 +36,8 @@ static func add_ailment_state(character: Dictionary, status_ailment: String) -> 
 	if not has_status_ailment(character, status_ailment):
 		character["status_ailment"].append(status_ailment)
 		ailmend_status_added = true
+		if status_ailment == "confusion":
+			character["confusion_turns"] = 2
 	return ailmend_status_added
 
 
@@ -55,20 +57,6 @@ static func has_status_ailment(character: Dictionary, status_ailment: String) ->
 			has_ailment = true
 			break
 	return has_ailment
-
-
-static func status_ailment_phase(character: Dictionary):
-	var status_ailments = character["status_ailment"]
-	if status_ailments.size() > 0:
-		for status_ailment in status_ailments:
-			if status_ailment == "poison":
-				return apply_poison(character)
-			elif status_ailment == "stun":
-				return character["name"] + " is stunned and can't act this turn."
-			elif status_ailment == "confusion":
-				if rand_range(0, 1) < 0.25:
-					return character["name"] + " is confused and can't act this turn"
-	return null
 
 
 static func apply_poison(character: Dictionary) -> String:
