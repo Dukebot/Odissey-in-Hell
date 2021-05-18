@@ -40,11 +40,6 @@ _global_script_classes=[ {
 "path": "res://src/MoveState.gd"
 }, {
 "base": "Node",
-"class": "StatusAilment",
-"language": "GDScript",
-"path": "res://src/StaticClasses/StatusAilment.gd"
-}, {
-"base": "Node",
 "class": "UseItemState",
 "language": "GDScript",
 "path": "res://src/UseItemState.gd"
@@ -56,7 +51,6 @@ _global_script_class_icons={
 "GameData": "",
 "Inventory": "",
 "MoveState": "",
-"StatusAilment": "",
 "UseItemState": ""
 }
 

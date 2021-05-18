@@ -33,7 +33,7 @@ script = ExtResource( 6 )
 [node name="GameTitle" type="Label" parent="."]
 margin_right = 1024.0
 margin_bottom = 136.0
-text = "Odissey In Hell"
+text = "Odyssey In Hell"
 align = 1
 valign = 1
 __meta__ = {
