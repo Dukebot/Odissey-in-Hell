@@ -128,6 +128,8 @@ func attack(attacker: Dictionary, skill_key: String, target: Dictionary):
 	var damage = Character.calculate_attack_damage(attacker, skill, main.items)
 	if not skill["is_magic"]:
 		damage -= Character.calculate_defence(target, main.items)
+	if damage < 0: 
+		damage = 0
 	
 	if rand_range(0, 1) < skill["accuracy"]:
 		target["health"] = target["health"] - damage

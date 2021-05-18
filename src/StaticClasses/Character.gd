@@ -2,15 +2,20 @@ class_name Character extends Node
 
 
 static func calculate_attack_damage(character: Dictionary, skill: Dictionary, items: Dictionary) -> int:
-	var strength_base = character["strength"]
 	var skill_power = skill["power"]
-	
-	var weapon_strength = 0
-	if character.has("weapon") and character["weapon"] != "":
-		var weapon = items[character["weapon"]]
-		weapon_strength = weapon["strength"]
-	
-	return strength_base + weapon_strength + skill_power
+
+	if skill["is_magic"]:
+		var magic_power = character["magic_power"]
+		
+		return magic_power + skill_power
+	else:
+		var strength = character["strength"]
+		var weapon_strength = 0
+		if character.has("weapon") and character["weapon"] != "":
+			var weapon = items[character["weapon"]]
+			weapon_strength = weapon["strength"]
+		
+		return strength + weapon_strength + skill_power
 
 
 static func calculate_defence(character: Dictionary, items: Dictionary) -> int:
@@ -57,8 +62,15 @@ static func status_ailment_phase(character: Dictionary):
 	if status_ailments.size() > 0:
 		for status_ailment in status_ailments:
 			if status_ailment == "poison":
-				character["health"] -= 5
-				return "The poison lowers " + character["name"] + "'s health by 5 points"
+				return apply_poison(character)
 			elif status_ailment == "stun":
-				return character["name"] + "is stunned and can't act this turn."
+				return character["name"] + " is stunned and can't act this turn."
+			elif status_ailment == "confusion":
+				if rand_range(0, 1) < 0.25:
+					return character["name"] + " is confused and can't act this turn"
 	return null
+
+
+static func apply_poison(character: Dictionary) -> String:
+	character["health"] -= 5
+	return "The poison lowers " + character["name"] + "'s health by 5 points"

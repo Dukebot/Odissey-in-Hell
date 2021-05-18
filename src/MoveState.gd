@@ -48,12 +48,16 @@ func move(x: int, y: int) -> void:
 	var inventory = main.inventory
 	var player = main.player
 	
+	var message = ""
+	if Character.has_status_ailment(player, "poison"):
+		message = Character.apply_poison(player)
+	
 	#Basic Movement
 	if map[x][y] == "#":
 		show_message("You smash your face against a wall")
 	elif map[x][y] == " ":
 		set_player_pos(x, y)
-		show_message("")
+		show_message(message)
 	
 	#Grab item
 	elif map[x][y] == "X":
