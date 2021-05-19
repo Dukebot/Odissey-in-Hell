@@ -54,7 +54,7 @@ func move(x: int, y: int) -> void:
 	
 	#Basic Movement
 	if map[x][y] == "#":
-		show_message("You smash your face against a wall")
+		show_message("You smash your face against a wall!")
 	elif map[x][y] == " ":
 		set_player_pos(x, y)
 		show_message(message)
@@ -79,15 +79,15 @@ func move(x: int, y: int) -> void:
 	elif map[x][y] == "M":
 		player["weapon"] = "masamune"
 		set_player_pos(x, y)
-		show_message("You've found the Masamune!")
+		show_message("You've found the Masamune! Your attack increases considerably")
 	elif map[x][y] == "O":
 		player["armor"] = "onyx_armor"
 		set_player_pos(x, y)
-		show_message("You've found the Onyx Armor!")
+		show_message("You've found the Onyx Armor! Your defence increases considerably")
 	elif map[x][y] == "N":
 		player["weapon"] = "necronomicon"
 		set_player_pos(x, y)
-		show_message("You've found the Necronomicon!")
+		show_message("You've found the Necronomicon! Now you can use Magic")
 	
 	#Use item
 	elif map[x][y] == "B":
