@@ -95,7 +95,7 @@ func move(x: int, y: int) -> void:
 			main.set_use_item_state("axes", x, y, "Do you want to use an Ax to open the Barred Door?")
 		else:
 			show_message("You need an Ax to open a Barred Door")
-	elif map[x][y] == "W":
+	elif map[x][y] == "*":
 		if inventory["explosives"] > 0:
 			main.set_use_item_state("explosives", x, y, "Do you want to use an Explosive to destroy the Cracked Wall?")
 		else:

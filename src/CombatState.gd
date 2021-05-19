@@ -59,7 +59,7 @@ func player_turn():
 	elif turn_phase == 1:
 		if Character.has_status_ailment(player, "stun"):
 			Character.remove_status_ailment(player, "stun")
-			messages.append(player["name"] + " is stunned and can't act this turn.")
+			messages.append(player["name"] + " is stunned and can't act this turn")
 			turn = 1
 			turn_phase = 0
 		elif Character.has_status_ailment(player, "confusion"):
@@ -81,7 +81,7 @@ func player_turn():
 			main.map[enemy_x][enemy_y] = " "
 			main.inventory["caramels"] += 1
 			main.set_move_state()
-			main.show_message("You obtain a Caramel for defeating " + enemy["name"])
+			main.show_message("The " + enemy["name"] + " dropped a Caramel)
 		else:
 			turn = 1
 			turn_phase = 0

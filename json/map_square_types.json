@@ -15,7 +15,7 @@
 		"name": "Barred Door",
 		"description": "Closed doors you need to unlock."
 	},
-	"W": {
+	"*": {
 		"name": "Cracked Wall",
 		"description": "A cracked wall."
 	},
