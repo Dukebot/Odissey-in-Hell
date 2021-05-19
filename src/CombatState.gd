@@ -176,7 +176,7 @@ func heal(character: Dictionary, healing_points: int):
 		healing_points -= difference
 		character["health"] = character["max_health"]
 	
-	messages.append(character["name"] + " healed " + str(healing_points))
+	messages.append(character["name"] + " used heal and healed " + str(healing_points))
 	turn_phase += 1
 
 
