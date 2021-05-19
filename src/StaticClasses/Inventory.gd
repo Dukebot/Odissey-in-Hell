@@ -1,5 +1,6 @@
 class_name Inventory extends Node
 
+
 #Caramels...
 
 static func get_use_caramel_message(inventory: Dictionary, player: Dictionary) -> String:
@@ -52,3 +53,21 @@ static func use_antidote(inventory: Dictionary, player: Dictionary) -> String:
 	Character.remove_status_ailment(player, "poison")
 	inventory["antidotes"] -= 1
 	return "The Antidote washes the poison off your blood"
+
+
+
+#Ax
+
+static func use_ax(inventory: Dictionary, player: Dictionary, map: Array, x: int, y: int) -> String:
+	map[x][y] = " "
+	inventory["axes"] -= 1
+	return "You open the Barred Door with the Ax"
+
+
+#Explosive
+
+static func use_explosive(inventory: Dictionary, player: Dictionary, map: Array, x: int, y: int) -> String:
+	map[x][y] = " "
+	inventory["explosives"] -= 1
+	return "You destroy the Cracked Wall with the Explosive"
+	

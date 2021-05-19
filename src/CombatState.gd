@@ -91,7 +91,7 @@ func player_action_selection():
 	show_attack_selection()
 	var skill_key = get_skill_selection()
 	if skill_key:
-		attack(main.player, skill_key, enemy)
+		attack(main.player, main.skills[skill_key], enemy)
 	var item_key = get_item_selection()
 	if item_key:
 		use_item(item_key)
@@ -131,8 +131,18 @@ func enemy_turn():
 		var enemy_skill_keys = enemy["skills"]
 		var rand_skill_index = Utils.get_random_array_index(enemy_skill_keys)
 		var skill_key = enemy_skill_keys[rand_skill_index]
+		var skill = main.skills[skill_key]
 		
-		attack(enemy, skill_key, main.player)
+		if skill_key == "heal":
+			var healing_points = skill["power"]
+			enemy["health"] += healing_points
+			if enemy["health"] > enemy["max_health"]:
+				var difference = enemy["health"] - enemy["max_health"]
+				healing_points -= difference
+				enemy["health"] = enemy["max_health"]
+			messages.append(enemy["name"] + " healed " + str(healing_points))
+		else:
+			attack(enemy, skill, main.player)
 	elif turn_phase == 1:
 		if main.player["health"] < 0:
 			print("Game Over...")
@@ -143,12 +153,11 @@ func enemy_turn():
 			turn_phase = 0
 
 
-func attack(attacker: Dictionary, skill_key: String, target: Dictionary):
-	var skill = main.skills[skill_key]
-	
+func attack(attacker: Dictionary, skill: Dictionary, target: Dictionary):
 	var damage = Character.calculate_attack_damage(attacker, skill, main.items)
 	if not skill["is_magic"]:
-		damage -= Character.calculate_defence(target, main.items)
+		#damage -= Character.calculate_defence(target, main.items)
+		damage = int(damage * (100/(100 + Character.calculate_defence(target, main.items))))
 	if damage < 0: 
 		damage = 0
 	

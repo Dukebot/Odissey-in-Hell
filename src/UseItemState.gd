@@ -15,19 +15,12 @@ func process_state() -> void:
 		
 		if item == "caramels":
 			main.show_message(Inventory.use_caramel(inventory, player))
-		
 		elif item == "antidotes":
 			main.show_message(Inventory.use_antidote(inventory, player))
-		
 		elif map[item_x][item_y] == "B":
-			map[item_x][item_y] = " "
-			main.show_message("You open the Barred Door with the Ax")
-			inventory[item] -= 1
-		
+			main.show_message(Inventory.use_ax(inventory, player, map, item_x, item_y))
 		elif map[item_x][item_y] == "W":
-			map[item_x][item_y] = " "
-			main.show_message("You destroy the Cracked Wall with the Explosive")
-			inventory[item] -= 1
+			main.show_message(Inventory.use_explosive(inventory, player, map, item_x, item_y))
 		
 		main.set_move_state()
 	
