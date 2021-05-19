@@ -81,7 +81,7 @@ func player_turn():
 			main.map[enemy_x][enemy_y] = " "
 			main.inventory["caramels"] += 1
 			main.set_move_state()
-			main.show_message("The " + enemy["name"] + " dropped a Caramel)
+			main.show_message("The " + enemy["name"] + " dropped a Caramel")
 		else:
 			turn = 1
 			turn_phase = 0
@@ -134,13 +134,7 @@ func enemy_turn():
 		var skill = main.skills[skill_key]
 		
 		if skill_key == "heal":
-			var healing_points = skill["power"]
-			enemy["health"] += healing_points
-			if enemy["health"] > enemy["max_health"]:
-				var difference = enemy["health"] - enemy["max_health"]
-				healing_points -= difference
-				enemy["health"] = enemy["max_health"]
-			messages.append(enemy["name"] + " healed " + str(healing_points))
+			heal(enemy, skill["power"])
 		else:
 			attack(enemy, skill, main.player)
 	elif turn_phase == 1:
@@ -172,6 +166,17 @@ func attack(attacker: Dictionary, skill: Dictionary, target: Dictionary):
 	else:
 		messages.append(attacker["name"] + " used " + skill["name"] + " and missed!")
 	
+	turn_phase += 1
+
+
+func heal(character: Dictionary, healing_points: int):
+	character["health"] += healing_points
+	if character["health"] > character["max_health"]:
+		var difference = character["health"] - character["max_health"]
+		healing_points -= difference
+		character["health"] = character["max_health"]
+	
+	messages.append(character["name"] + " healed " + str(healing_points))
 	turn_phase += 1
 
 
