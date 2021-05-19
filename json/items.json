@@ -7,16 +7,16 @@
 	"masamune": {
 		"name": "Masamune",
 		"strength": 30,
-		"interaction": "There's a KATANA on a pedestal. You throw your SWORD and take the KATANA, your attack increases considerably."
+		"interaction": ""
 	},
 	"leather_armor": {
-		"name": "Leather Armor",
+		"name": "Leather Armour",
 		"defence": 5,
 		"interaction": ""
 	},
 	"onyx_armor": {
-		"name": "Onyx Armor",
+		"name": "Onyx Armour",
 		"defence": 15,
-		"interaction": "There's an ARMOUR on the floor. You throw your ARMOUR and take the other one, your defence increases considerably."
+		"interaction": ""
 	}
 }
