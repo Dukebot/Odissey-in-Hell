@@ -1,14 +1,14 @@
 {
 	"cut": {
 		"name": "Cut",
-		"power": 5,
+		"power": 10,
 		"is_magic": false,
 		"accuracy": 1.0,
 		"effect": ""
 	},
 	"thrust": {
 		"name": "Thrust",
-		"power": 15,
+		"power": 20,
 		"is_magic": false,
 		"accuracy": 0.85,
 		"effect": ""
@@ -29,14 +29,14 @@
 	},
 	"spit": {
 		"name": "Spit",
-		"power": 0,
+		"power": 1,
 		"is_magic": false,
-		"accuracy": 0.50,
+		"accuracy": 0.33,
 		"effect": "poison"
 	},
 	"scratch": {
 		"name": "Scratch",
-		"power": 7,
+		"power": 6,
 		"is_magic": false,
 		"accuracy": 0.80,
 		"effect": ""
@@ -50,9 +50,9 @@
 	},
 	"kiss": {
 		"name": "Kiss",
-		"power": 0,
+		"power": 1,
 		"is_magic": true,
-		"accuracy": 0.50,
+		"accuracy": 0.33,
 		"effect": "confusion"
 	},
 	"knives": {
@@ -66,28 +66,28 @@
 		"name": "Fireball",
 		"power": 15,
 		"is_magic": true,
-		"accuracy": 0.75,
+		"accuracy": 0.65,
 		"effect": ""
 	},
 	"electroshock": {
 		"name": "Electroshock",
-		"power": 0,
+		"power": 1,
 		"is_magic": true,
-		"accuracy": 0.50,
+		"accuracy": 0.33,
 		"effect": "stun"
 	},
 	"shot": {
 		"name": "Shot",
-		"power": 20,
+		"power": 15,
 		"is_magic": false,
 		"accuracy": 0.80,
 		"effect": ""
 	},
 	"lightning": {
 		"name": "Lightning",
-		"power": 25,
+		"power": 20,
 		"is_magic": true,
-		"accuracy": 0.75,
+		"accuracy": 0.70,
 		"effect": ""
 	},
 	"heal": {
@@ -108,7 +108,7 @@
 		"name": "Death Dance",
 		"power": 40,
 		"is_magic": true,
-		"accuracy": 0.75,
+		"accuracy": 0.60,
 		"effect": ""
 	}
 }

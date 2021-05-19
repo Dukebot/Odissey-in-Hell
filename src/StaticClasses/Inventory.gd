@@ -23,9 +23,9 @@ static func can_use_caramel(inventory: Dictionary, player: Dictionary) -> bool:
 
 
 static func use_caramel(inventory: Dictionary, player: Dictionary) -> String:
-	player["health"] += 10
+	player["health"] += 35
 	inventory["caramels"] -= 1
-	return "You use a Caramel and recover 10 health points"
+	return "You eat a Caramel and recover 35 health points"
 
 
 #Antidotes...
