@@ -19,7 +19,7 @@ func process_state() -> void:
 			main.show_message(Inventory.use_antidote(inventory, player))
 		elif map[item_x][item_y] == "B":
 			main.show_message(Inventory.use_ax(inventory, player, map, item_x, item_y))
-		elif map[item_x][item_y] == "W":
+		elif map[item_x][item_y] == "*":
 			main.show_message(Inventory.use_explosive(inventory, player, map, item_x, item_y))
 		
 		main.set_move_state()
