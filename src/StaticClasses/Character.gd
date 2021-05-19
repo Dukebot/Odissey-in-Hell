@@ -61,4 +61,4 @@ static func has_status_ailment(character: Dictionary, status_ailment: String) ->
 
 static func apply_poison(character: Dictionary) -> String:
 	character["health"] -= 3
-	return "The poison lowers " + character["name"] + "'s health by 5 points"
+	return "The poison lowers " + character["name"] + "'s health by 3 points"
