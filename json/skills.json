@@ -22,7 +22,7 @@
 	},
 	"magic": {
 		"name": "Magic",
-		"power": 50,
+		"power": 40,
 		"is_magic": true,
 		"accuracy": 0.90,
 		"effect": ""
