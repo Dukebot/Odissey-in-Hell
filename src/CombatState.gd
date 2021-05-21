@@ -114,6 +114,8 @@ func get_skill_selection():
 		skill_key = main.player["skills"][1]
 	elif Input.is_action_just_pressed("skill_3"):
 		skill_key = main.player["skills"][2]
+	elif main.player["skills"].size() == 4 and Input.is_action_just_pressed("skill_4"):
+		skill_key = main.player["skills"][3]
 	return skill_key
 
 

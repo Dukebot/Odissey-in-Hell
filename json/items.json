@@ -9,6 +9,11 @@
 		"strength": 30,
 		"interaction": ""
 	},
+	"necronomicon": {
+		"name": "Necronomicon",
+		"magic_power": 40,
+		"interaction": ""
+	},
 	"leather_armor": {
 		"name": "Leather Armour",
 		"defence": 5,

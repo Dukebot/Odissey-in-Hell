@@ -6,10 +6,10 @@ static func calculate_attack_damage(character: Dictionary, skill: Dictionary, it
 
 	if skill["is_magic"]:
 		var magic_power = character["magic_power"]
-		
 		return magic_power + skill_power
 	else:
 		var strength = character["strength"]
+		
 		var weapon_strength = 0
 		if character.has("weapon") and character["weapon"] != "":
 			var weapon = items[character["weapon"]]

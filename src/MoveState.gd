@@ -85,7 +85,8 @@ func move(x: int, y: int) -> void:
 		set_player_pos(x, y)
 		show_message("You've found the Onyx Armor! Your defence increases considerably")
 	elif map[x][y] == "N":
-		player["weapon"] = "necronomicon"
+		player["magic_power"] = main.items["necronomicon"]["magic_power"]
+		player["skills"].append("magic")
 		set_player_pos(x, y)
 		show_message("You've found the Necronomicon! Now you can use Magic")
 	
