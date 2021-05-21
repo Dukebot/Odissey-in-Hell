@@ -5,10 +5,10 @@
 		["", "You enter your name"],
 		["voice", "'kay, player_name, take this, it'll help ya' get out of 'ere. <A necklace falls through the cell's window>"],
 		["player_name", "What is this thing?"],
-		["voice", "A special charm, it’s a map of the prison."],
+		["voice", "A special charm, it's a map of the prison."],
 		["player_name", "And what do you want me to do with it?"],
 		["voice", "You must go 'nd kill that Ga’ahl bastard!"],
-		["player_name", "But… I don't know if I can do it."],
+		["player_name", "But... I don't know if I can do it."],
 		["voice", "I'm sure you can, believe in yourself!"],
 		["voice", "Oh, if 'u need somethin', ask for <Help> 'nd I'll try to help ya'."]
 	]

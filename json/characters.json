@@ -46,9 +46,9 @@
 	"gaahl": {
 		"name": "Gaahl",
 		"health": 256,
-		"strength": 30,
-		"magic_power": 25,
-		"defence": 20,
+		"strength": 25,
+		"magic_power": 20,
+		"defence": 15,
 		"skills": ["death_dance", "mace", "heal"],
 		"status_ailment": [],
 		"weapon": "",
