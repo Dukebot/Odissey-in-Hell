@@ -11,15 +11,17 @@ __meta__ = {
 }
 
 [node name="Title" type="Label" parent="."]
-margin_right = 1024.0
+margin_left = 64.0
+margin_right = 960.0
 margin_bottom = 128.0
 text = "Odyssey in Hell"
 align = 1
 valign = 1
 
 [node name="IntroText" type="Label" parent="."]
+margin_left = 64.0
 margin_top = 128.0
-margin_right = 1024.0
+margin_right = 960.0
 margin_bottom = 320.0
 text = "You're someone that fell to a place known as Hell Prison. If you want to flee from here and go back home with your beloved ones… you must fight your way through and defeat the gates' guardian, Ga’ahl. It will be very hard, but don't despair, maybe someone can help you, don't lose your hope.
 Be brave, you're stronger than you think!
@@ -27,11 +29,15 @@ Be brave, you're stronger than you think!
 align = 1
 valign = 1
 autowrap = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
 
 [node name="DialogueLabel" type="Label" parent="."]
-margin_top = 320.0
-margin_right = 1024.0
-margin_bottom = 448.0
+margin_left = 64.0
+margin_top = 192.0
+margin_right = 960.0
+margin_bottom = 320.0
 align = 1
 valign = 1
 autowrap = true
@@ -42,6 +48,6 @@ __meta__ = {
 [node name="PlayerNameInput" type="TextEdit" parent="."]
 visible = false
 margin_left = 384.0
-margin_top = 488.0
+margin_top = 384.0
 margin_right = 704.0
-margin_bottom = 552.0
+margin_bottom = 448.0

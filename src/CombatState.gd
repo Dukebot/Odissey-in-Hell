@@ -128,9 +128,7 @@ func get_item_selection():
 
 func enemy_turn():
 	if turn_phase == 0:
-		var enemy_skill_keys = enemy["skills"]
-		var rand_skill_index = Utils.get_random_array_index(enemy_skill_keys)
-		var skill_key = enemy_skill_keys[rand_skill_index]
+		var skill_key = get_random_enemy_skill_key()
 		var skill = main.skills[skill_key]
 		
 		if skill_key == "heal":
@@ -145,6 +143,20 @@ func enemy_turn():
 		else:
 			turn = 0
 			turn_phase = 0
+
+
+func get_random_enemy_skill_key() -> String:
+	var skill_key
+	
+	var enemy_skill_keys = enemy["skills"]
+	var rand_skill_index = Utils.get_random_array_index(enemy_skill_keys)
+	skill_key = enemy_skill_keys[rand_skill_index]
+	
+	if skill_key == "heal":
+		rand_skill_index = Utils.get_random_array_index(enemy_skill_keys)
+		skill_key = enemy_skill_keys[rand_skill_index]
+	
+	return skill_key
 
 
 func attack(attacker: Dictionary, skill: Dictionary, target: Dictionary):

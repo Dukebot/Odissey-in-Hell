@@ -18,6 +18,13 @@ func _ready():
 
 
 func _process(delta):
+	#Intro Text
+	if intro_text_label.text != "":
+		if Input.is_action_just_pressed("continue"):
+			intro_text_label.text = ""
+		return
+	
+	#Dialogue Text
 	if dialogue_index < intro_dialogue.size():
 		var dialogue_line = intro_dialogue[dialogue_index]
 		var speaker = dialogue_line[0]
@@ -39,6 +46,7 @@ func _process(delta):
 			dialogue_label.set_text(speaker + " - " + text)
 			if Input.is_action_just_pressed("continue"):
 				dialogue_index += 1
+	#Start Advernture text
 	else:
 		dialogue_label.set_text("Press SPACE to start adventure!")
 		if Input.is_action_just_pressed("continue"):
