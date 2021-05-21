@@ -11,3 +11,6 @@ func _ready():
 	for key in characters.keys():
 		var character = characters[key]
 		character["max_health"] = character["health"]
+		
+		if key == "player":
+			character["name"] = Globals.player_name

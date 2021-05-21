@@ -1,8 +1,47 @@
-[gd_scene format=2]
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://src/Interface/Intro.gd" type="Script" id=1]
 
 [node name="Intro" type="Control"]
 anchor_right = 1.0
 anchor_bottom = 1.0
+script = ExtResource( 1 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
+
+[node name="Title" type="Label" parent="."]
+margin_right = 1024.0
+margin_bottom = 128.0
+text = "Odyssey in Hell"
+align = 1
+valign = 1
+
+[node name="IntroText" type="Label" parent="."]
+margin_top = 128.0
+margin_right = 1024.0
+margin_bottom = 320.0
+text = "You're someone that fell to a place known as Hell Prison. If you want to flee from here and go back home with your beloved ones… you must fight your way through and defeat the gates' guardian, Ga’ahl. It will be very hard, but don't despair, maybe someone can help you, don't lose your hope.
+Be brave, you're stronger than you think!
+"
+align = 1
+valign = 1
+autowrap = true
+
+[node name="DialogueLabel" type="Label" parent="."]
+margin_top = 320.0
+margin_right = 1024.0
+margin_bottom = 448.0
+align = 1
+valign = 1
+autowrap = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="PlayerNameInput" type="TextEdit" parent="."]
+visible = false
+margin_left = 384.0
+margin_top = 488.0
+margin_right = 704.0
+margin_bottom = 552.0

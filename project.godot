@@ -57,12 +57,13 @@ _global_script_class_icons={
 [application]
 
 config/name="Odissey In Hell"
-run/main_scene="res://src/Main.tscn"
+run/main_scene="res://src/Interface/Intro.tscn"
 config/icon="res://icon.png"
 
 [autoload]
 
 Utils="*res://src/singletons/Utils.gd"
+Globals="*res://src/singletons/Globals.gd"
 
 [gui]
 
