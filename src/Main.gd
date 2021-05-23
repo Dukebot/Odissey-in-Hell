@@ -17,6 +17,8 @@ onready var inventory_items_label = $InventoryItems
 
 onready var text_output_label = $TextOutput
 
+onready var help = $Help
+
 onready var map = game_data.map
 onready var inventory = game_data.inventory
 onready var characters = game_data.characters
@@ -32,14 +34,18 @@ func _ready():
 
 
 func _process(delta):
-	if game_state == GameState.MOVE:
-		move_state.process_state()
-	elif game_state == GameState.USE_ITEM:
-		use_item_state.process_state()
-	elif game_state == GameState.COMBAT:
-		combat_state.process_state()
-	if player["health"] < 0: player["health"] = 0
-	drawer.draw()
+	if Input.is_action_just_pressed("help"):
+		help.visible = not help.visible
+	
+	if not help.visible:
+		if game_state == GameState.MOVE:
+			move_state.process_state()
+		elif game_state == GameState.USE_ITEM:
+			use_item_state.process_state()
+		elif game_state == GameState.COMBAT:
+			combat_state.process_state()
+		if player["health"] < 0: player["health"] = 0
+		drawer.draw()
 
 
 func show_message(text: String) -> void:

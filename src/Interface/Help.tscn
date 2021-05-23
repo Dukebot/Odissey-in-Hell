@@ -1,0 +1,38 @@
+[gd_scene format=2]
+
+[node name="Help" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ColorRect" type="ColorRect" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+color = Color( 0, 0, 0, 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 64.0
+margin_top = 64.0
+margin_right = -64.0
+margin_bottom = -56.0
+text = "To open a <BARRED DOOR> you must have an <AX> and use it on the door.
+To destroy a <CRACKED WALL> you must have an <EXPLOSIVE> and use it on the wall.
+Press [C] to use a Caramel
+Press [A] to use an Antidote
+
+<IN-BATTLE ACTIONS>
+Slash [Weak attack / 100% Accuracy]
+Cut [Medium attack / 85% Accuracy]
+Thrust [Strong attack / 55% Accuracy]
+Magic [When you have the Necronomicon]
+Press [C] to use a Caramel
+Press [A] to use an Antidote"
+valign = 1
+autowrap = true
