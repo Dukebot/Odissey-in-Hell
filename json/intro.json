@@ -1,5 +1,5 @@
 {
-	"intro_story": "You're someone that fell to a place known as Hell Prison. If you want to flee from here and go back home with your beloved ones… you must fight your way through and defeat the gates' guardian, Ga’ahl. It will be very hard, but don't despair, maybe someone can help you, don't lose your hope. Be brave, you're stronger than you think!",
+	"intro_story": "You're someone that fell to a place known as Hell Prison. If you want to flee from here and go back home with your beloved ones… you must fight your way through and defeat the gates' guardian, Gaahl. It will be very hard, but don't despair, maybe someone can help you, don't lose your hope. Be brave, you're stronger than you think!",
 	"intro_dialogue": [
 		["voice", "Hey, 'u, on the other side, what's 'ur name?"],
 		["", "You enter your name"],
@@ -7,9 +7,9 @@
 		["player_name", "What is this thing?"],
 		["voice", "A special charm, it's a map of the prison."],
 		["player_name", "And what do you want me to do with it?"],
-		["voice", "You must go 'nd kill that Ga’ahl bastard!"],
+		["voice", "You must go 'nd kill that Gaahl bastard!"],
 		["player_name", "But... I don't know if I can do it."],
 		["voice", "I'm sure you can, believe in yourself!"],
-		["voice", "Oh, if 'u need somethin', ask for <Help> 'nd I'll try to help ya'."]
+		["voice", "Oh, if 'u need somethin', press <H> 'nd I'll try to help ya'."]
 	]
 }
