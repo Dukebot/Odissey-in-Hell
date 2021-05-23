@@ -38,12 +38,21 @@ func _process(delta):
 		use_item_state.process_state()
 	elif game_state == GameState.COMBAT:
 		combat_state.process_state()
+	if player["health"] < 0: player["health"] = 0
 	drawer.draw()
 
 
 func show_message(text: String) -> void:
 	text_output_label.text = text
 
+
+func check_game_over():
+	if player["health"] <= 0:
+		player["health"] = 0
+		show_message("No health, you die... Press SPACE to continue...")
+		if Input.is_action_just_pressed("continue"):
+			get_tree().change_scene("res://src/Interface/GameOver.tscn")
+		
 
 #State changing
 

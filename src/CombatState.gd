@@ -26,6 +26,8 @@ func process_state():
 				messages = []
 				messages_index = 0
 				print("Los mensajes se han vaciado")
+	elif main.player["health"] <= 0:
+		get_tree().change_scene("res://src/Interface/GameOver.tscn")
 	else:
 		if turn == 0:
 			player_turn()
@@ -78,10 +80,13 @@ func player_turn():
 	#Action resolution and turn switch phase
 	elif turn_phase == 2:
 		if enemy["health"] < 0:
-			main.map[enemy_x][enemy_y] = " "
-			main.inventory["caramels"] += 1
-			main.set_move_state()
-			main.show_message("The " + enemy["name"] + " dropped a Caramel")
+			if enemy["name"] == "Gaahl":
+				get_tree().change_scene("res://src/Interface/GameWin.tscn")
+			else:
+				main.map[enemy_x][enemy_y] = " "
+				main.inventory["caramels"] += 1
+				main.set_move_state()
+				main.show_message("The " + enemy["name"] + " dropped a Caramel")
 		else:
 			turn = 1
 			turn_phase = 0
@@ -138,13 +143,8 @@ func enemy_turn():
 		else:
 			attack(enemy, skill, main.player)
 	elif turn_phase == 1:
-		if main.player["health"] < 0:
-			print("Game Over...")
-			main.set_move_state()
-			main.show_message("You've been defeated...")
-		else:
-			turn = 0
-			turn_phase = 0
+		turn = 0
+		turn_phase = 0
 
 
 func get_random_enemy_skill_key() -> String:

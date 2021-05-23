@@ -69,18 +69,17 @@ __meta__ = {
 [node name="InventoryItems" type="Label" parent="."]
 margin_left = 704.0
 margin_top = 129.0
-margin_right = 896.0
+margin_right = 960.0
 margin_bottom = 449.0
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
 [node name="PlayerStats" type="Label" parent="."]
-visible = false
-margin_left = 89.0
-margin_top = 127.0
-margin_right = 281.0
-margin_bottom = 447.0
+margin_left = 64.0
+margin_top = 128.0
+margin_right = 320.0
+margin_bottom = 448.0
 __meta__ = {
 "_edit_use_anchors_": false
 }

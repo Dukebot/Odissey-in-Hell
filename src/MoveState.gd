@@ -52,6 +52,9 @@ func move(x: int, y: int) -> void:
 	if Character.has_status_ailment(player, "poison"):
 		message = Character.apply_poison(player)
 	
+	if player["health"] <= 0:
+		get_tree().change_scene("res://src/Interface/GameOver.tscn")
+	
 	#Basic Movement
 	if map[x][y] == "#":
 		show_message("You smash your face against a wall!")

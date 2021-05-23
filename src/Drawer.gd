@@ -21,11 +21,15 @@ func draw_map(map_label, map):
 
 func draw_player_stats(player_stats_label, player):
 	player_stats_label.text = ""
-	for key in player.keys():
-		player_stats_label.text += key + " - " + str(player[key]) + "\n"
+	#for key in player.keys():
+	#	player_stats_label.text += key + " - " + str(player[key]) + "\n"
+	player_stats_label.text += "Name: " + player["name"] + "\n"
+	player_stats_label.text += "HP: " + str(player["health"])
+
+	
 
 
 func draw_inventory(inventory_items_label, inventory):
 	inventory_items_label.text = ""
 	for key in inventory.keys():
-		inventory_items_label.text += key + " - " + str(inventory[key]) + "\n"
+		inventory_items_label.text += key + ": " + str(inventory[key]) + "\n"
