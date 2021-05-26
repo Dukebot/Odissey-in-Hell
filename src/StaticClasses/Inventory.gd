@@ -9,7 +9,7 @@ static func get_use_caramel_message(inventory: Dictionary, player: Dictionary) -
 		if player["health"] < player["max_health"]:
 			message = "Do you want to use a Caramel?"
 		else:
-			message = "Your are not hurt"
+			message = "You are not hurt"
 	else:
 		message = "You don't have any Caramels"
 	return message
@@ -24,6 +24,8 @@ static func can_use_caramel(inventory: Dictionary, player: Dictionary) -> bool:
 
 static func use_caramel(inventory: Dictionary, player: Dictionary) -> String:
 	player["health"] += 60
+	if player["health"] > player["max_health"]:
+		player["health"] = player["max_health"]
 	inventory["caramels"] -= 1
 	return "You eat a Caramel and recover 60 health points"
 
