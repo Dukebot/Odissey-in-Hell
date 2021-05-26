@@ -12,8 +12,8 @@ __meta__ = {
 
 [node name="Label" type="Label" parent="."]
 margin_left = 64.0
-margin_right = 960.0
-margin_bottom = 600.0
+margin_right = 1216.0
+margin_bottom = 720.0
 text = "You were able to defeat Ghaal, the warden, and flee from the Hell Prison... but you still have to get out from Hell itself."
 align = 1
 valign = 1

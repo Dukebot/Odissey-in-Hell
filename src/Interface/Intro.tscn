@@ -44,7 +44,10 @@ __meta__ = {
 
 [node name="PlayerNameInput" type="TextEdit" parent="."]
 visible = false
-margin_left = 480.0
+margin_left = 512.0
 margin_top = 544.0
-margin_right = 800.0
-margin_bottom = 608.0
+margin_right = 768.0
+margin_bottom = 592.0
+__meta__ = {
+"_edit_use_anchors_": false
+}

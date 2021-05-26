@@ -11,10 +11,14 @@ __meta__ = {
 }
 
 [node name="Label" type="Label" parent="."]
-margin_right = 1024.0
-margin_bottom = 600.0
+margin_left = 64.0
+margin_right = 1216.0
+margin_bottom = 720.0
 text = "Game over
 
 You've been defeated..."
 align = 1
 valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
