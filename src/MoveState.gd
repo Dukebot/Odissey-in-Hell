@@ -111,7 +111,7 @@ func move(x: int, y: int) -> void:
 	elif map[x][y] == "S":
 		main.set_combat_state("succubus", x, y)
 	elif map[x][y] == "H":
-		main.set_combat_state("hell_prision_guard", x, y)
+		main.set_combat_state("hell_prison_guard", x, y)
 	elif map[x][y] == "G":
 		main.set_combat_state("gaahl", x, y)
 

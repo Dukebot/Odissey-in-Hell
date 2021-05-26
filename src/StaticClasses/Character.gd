@@ -32,13 +32,13 @@ static func calculate_defence(character: Dictionary, items: Dictionary) -> int:
 
 
 static func add_ailment_state(character: Dictionary, status_ailment: String) -> bool:
-	var ailmend_status_added: bool = false
+	var ailment_status_added: bool = false
 	if not has_status_ailment(character, status_ailment):
 		character["status_ailment"].append(status_ailment)
-		ailmend_status_added = true
+		ailment_status_added = true
 		if status_ailment == "confusion":
 			character["confusion_turns"] = 2
-	return ailmend_status_added
+	return ailment_status_added
 
 
 static func remove_status_ailment(character: Dictionary, status_ailment: String) -> void:

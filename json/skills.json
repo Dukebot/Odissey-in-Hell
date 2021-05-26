@@ -99,14 +99,14 @@
 	},
 	"mace": {
 		"name": "Mace",
-		"power": 30,
+		"power": 25,
 		"is_magic": false,
 		"accuracy": 0.80,
 		"effect": ""
 	},
 	"death_dance": {
 		"name": "Death Dance",
-		"power": 40,
+		"power": 30,
 		"is_magic": true,
 		"accuracy": 0.60,
 		"effect": ""

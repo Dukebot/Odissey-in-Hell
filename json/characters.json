@@ -1,7 +1,7 @@
 {
 	"player": {
 		"name": "Player",
-		"health": 1000,
+		"health": 400,
 		"strength": 0,
 		"magic_power": 0,
 		"defence": 0,
@@ -32,8 +32,8 @@
 		"weapon": "",
 		"armor": ""
 	},
-	"hell_prision_guard": {
-		"name": "Hell Prision Guard",
+	"hell_prison_guard": {
+		"name": "Hell Prison Guard",
 		"health": 170,
 		"strength": 15,
 		"magic_power": 10,
